@@ -9,6 +9,9 @@ import java.util.Scanner;
 
 public class scrabble {
 	
+	
+}
+	
 	public static void main(String[] args){
 		/*
 		Scanner String input = new Scanner(System.in);  
