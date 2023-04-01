@@ -11,6 +11,16 @@ public class scrabble {
 
 	public static void main(String[] args) {
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 	}
 
