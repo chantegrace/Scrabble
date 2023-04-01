@@ -11,6 +11,11 @@ public class scrabble {
 
 	public static void main(String[] args) {
 		
+		//Initialises scrabble game, requirement to ask to load from default board or not
+		//not entirely sure what that means.
+		
+		
+		//calls object from newGame Class
 		newGame scrabble = new newGame();
         scrabble.startGame();
 		

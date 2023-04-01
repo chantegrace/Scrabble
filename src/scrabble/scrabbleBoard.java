@@ -3,6 +3,8 @@ package scrabble;
 
 // Creating Board class for game
 // Scrabble Class for the Board
+// plain 26 x 12 Scrabble board as required.
+// will need to figure out how to make the the col and row say the 
 
     public class scrabbleBoard {
     char[][] board;

@@ -1,3 +1,7 @@
+// class is for the normal tiles set in scrabble plus each point corresponding to them.
+// could actually do this in one hashMap which I tried initially but it just did not work for me personally.
+
+
 package scrabble;
 
 import java.util.Map;

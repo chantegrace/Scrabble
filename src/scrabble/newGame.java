@@ -1,3 +1,6 @@
+//new game class comes from the user requirement of project
+//code is easier to digest of i used another class rather than having it in my main method.
+
 package scrabble;
 
 import java.util.Scanner;
