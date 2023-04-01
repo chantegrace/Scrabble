@@ -11,7 +11,8 @@ public class scrabble {
 
 	public static void main(String[] args) {
 		
-		
+		newGame scrabble = new newGame();
+        scrabble.startGame();
 		
 		
 		
