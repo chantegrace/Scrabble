@@ -36,6 +36,9 @@ public class Tiles {
 	 'X',
 	 'Y','Y',
 	 'Z'};
+	
+	char[] playerTiles = new char[7];
+
 	 
 	}
 
