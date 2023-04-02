@@ -26,7 +26,7 @@ public class newGame {
                 
             }
             else if (loadBoard.equals("d")) {
-                System.out.println("Using default board.");
+                System.out.println("L O A D I N G default board.");
             }
             else {
                 System.out.println("This is not a valid choice. Please enter (l/d): ");
