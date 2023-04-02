@@ -76,10 +76,12 @@ public class Main {
         playerTiles[i] = tileList.get(i);
          }
 
-        System.out.println("Your tiles are: ");
+        System.out.println("Your turn: Your tiles are: ");
         for (char c : playerTiles) {
         	 System.out.print(c + " ");
         		}
+        
+        
         	
 	
 	
