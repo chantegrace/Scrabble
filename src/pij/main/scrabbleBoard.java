@@ -1,4 +1,4 @@
-package scrabble;
+package pij.main;
 
 
 // Creating Board class for game
@@ -14,7 +14,7 @@ package scrabble;
         // initialise board with blank tiles
         for (int row = 0; row < 26; row++) {
                 for (int col = 0; col < 12; col++) {
-                    board[row][col] = ' ';
+                    board[row][col] = '-';
                 }
             }
         } 
