@@ -20,6 +20,10 @@ public class newGame {
         while (true) {
             if (loadBoard.equals("l")) {
                 System.out.println("Please enter the file name of the board: ");
+                //input some other code here. klkl
+                
+                
+                
             }
             else if (loadBoard.equals("d")) {
                 System.out.println("Using default board.");
