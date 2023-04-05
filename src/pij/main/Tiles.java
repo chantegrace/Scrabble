@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Map;
 
 public class Tiles {
-    private Map<Character, Integer> pointsMap = new HashMap<>();
-    private char[] letters;
+    protected Map<Character, Integer> pointsMap = new HashMap<>();
+    protected char[] letters;
     private int[] points;
     private char[] playerTiles;
 
@@ -30,15 +30,15 @@ public class Tiles {
         
         // Populate the playerTiles array with a random selection of tiles
         playerTiles = new char[7];
-        List<Character> letterList = new ArrayList<>();
+        List<Character> tileList = new ArrayList<>();
         for (char letter : letters) {
             for (int i = 0; i < pointsMap.get(letter); i++) {
-                letterList.add(letter);
+            	tileList.add(letter);
             }
         }
-        Collections.shuffle(letterList);
+        Collections.shuffle(tileList);
         for (int i = 0; i < 7; i++) {
-            playerTiles[i] = letterList.get(i);
+            playerTiles[i] = tileList.get(i);
         }
     }
 

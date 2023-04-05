@@ -2,29 +2,41 @@ package pij.main;
     
 public class ScrabbleManager {
     private char[][] board;
+    private Players players;
 
-    public ScrabbleManager(int numRows, int numCols) {
-        board = new char[numRows][numCols];
+    public ScrabbleManager(int numRows, int numCols, Players players) {
+        this.board = new char[numRows][numCols];
         for (int i = 0; i < numRows; i++) {
             for (int j = 0; j < numCols; j++) {
                 board[i][j] = '-';
             }
         }
-    }    
+        this.players = players;
+    }  
                 
-	public void placeWord(String word, int row, int col, char[] playerTiles) {
+    public void placeWord(String word, int row, int col, boolean isHorizontal) {
         // Check if the word can be placed on the board
-        if (!canPlaceWord(word, row, col)) {
+        if (isHorizontal && !canPlaceWord(word, row, col, true)) {
+            System.out.println("This is not a valid move");
+            return;
+        } else if (!isHorizontal && !canPlaceWordVertically(word, row, col)) {
             System.out.println("This is not a valid move");
             return;
         }
 
         // Place the word on the board
-        for (int i = 0; i < word.length(); i++) {
-            board[row][col + i] = word.charAt(i);
+        if (isHorizontal) {
+            for (int i = 0; i < word.length(); i++) {
+                board[row][col + i] = word.charAt(i);
+            }
+        } else {
+            for (int i = 0; i < word.length(); i++) {
+                board[row + i][col] = word.charAt(i);
+            }
         }
+    }
 
-        // Remove the tiles used from the player's tiles
+        /*Remove the tiles used from the player's tiles
         for (int i = 0; i < word.length(); i++) {
             char tile = word.charAt(i);
             for (int j = 0; j < playerTiles.length; j++) {
@@ -35,8 +47,10 @@ public class ScrabbleManager {
             }
         }
     }
+    */
 
-	private boolean canPlaceWord(String word, int row, int col) {
+
+	private boolean canPlaceWord(String word, int row, int col, boolean isHoriztional) {
 	    if (this.board == null) {
 	        System.out.println("board is null");
 	    }

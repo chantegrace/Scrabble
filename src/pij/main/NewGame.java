@@ -23,7 +23,7 @@ public class NewGame {
                 System.out.println("Please enter the file name of the board: ");
             }
             else if (loadBoard.equals("d")) {
-                System.out.println("L O A D I N G default board.");
+                System.out.println("Loading the default board.");
             }
             else {
                 System.out.println("This is not a valid choice. Please enter (l/d): ");

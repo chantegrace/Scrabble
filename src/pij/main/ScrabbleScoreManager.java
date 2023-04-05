@@ -38,7 +38,7 @@ public class ScrabbleScoreManager {
         letterValues.put('Y', 4);
         letterValues.put('Z', 10);
 
-        // Initialize the scores to 0
+        // Initialise the scores to 0
         humanScore = 0;
         computerScore = 0;
     }

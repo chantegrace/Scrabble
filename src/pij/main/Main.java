@@ -1,6 +1,7 @@
 package pij.main;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -21,11 +22,15 @@ public class Main {
     	start.startGame();
     	   	
     	//Initialises Blank Board
-        ScrabbleBoard board = new ScrabbleBoard(15, 15);
-        board.placeWord(" ", 0, 0, true);
-        board.printBoard();
-        //Method to write down plain text.
-        board.writeBoard();
+    	ScrabbleBoard board;
+		try {
+			board = new ScrabbleBoard("defaultboard.txt");
+			board.placeWord(" ", 0, 0, true);
+	        board.printBoard();
+	        //Method to write down plain text.
+	        board.writeBoard();
+		
+       
         
         // 100 Tile Bags from Official Scrabble Game
         
@@ -49,41 +54,33 @@ public class Main {
         for (char c : tileBag) {
             tileList.add(c);
         }
-
-        // shuffle the 100 Tile from the bags
-        Collections.shuffle(tileList);
-
-        char[] playerTiles = new char[7];
-
-        // 7 tiles from the shuffled tileList
-        for (int i = 0; i < 7; i++) {
-            playerTiles[i] = tileList.get(i);
-        }
+      
      
         		
         //Time for the Players
         Players player1 = new Players(board);
         Players player2 = new Players(board);
+        
+        //while loop to start.
 
+    
+
+        player1.humanTurn();     
+        player2.computerTurn();
+        
         // get tiles for the human player
         char[] player1Tiles = player1.getPlayerTiles();
-
-
-        player1.humanTurn();
-        try (Scanner scanner = new Scanner(System.in)) {
-			String word = scanner.nextLine();
-		}
-        player2.computerTurn();
+        char[] player2Tiles = player2.getPlayerTiles();
 
         //Game Manager
-        ScrabbleManager game = new ScrabbleManager(15,15);
-        game.placeWord(" ", 0, 0, player1Tiles);
+        ScrabbleManager game = new ScrabbleManager(15,15, player2);
+        game.placeWord("TEST", 7, 7, true) ;
 
         //Score Manager
         ScrabbleScoreManager score = new ScrabbleScoreManager();
         score.calculateScore(player1Tiles);
-        score.calculateComputerScore(playerTiles);
-        
+        score.calculateComputerScore(player2Tiles);
+      
         
         ///outer while loop
         
@@ -92,7 +89,10 @@ public class Main {
         
         
         
-        
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
     }
     
