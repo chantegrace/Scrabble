@@ -5,8 +5,9 @@ package pij.main;
 
 import java.util.Scanner;
 
-public class newGame {
-    String startGame;
+public class NewGame {
+
+	
     
     public void startGame() {
         Scanner input = new Scanner(System.in);
@@ -20,10 +21,6 @@ public class newGame {
         while (true) {
             if (loadBoard.equals("l")) {
                 System.out.println("Please enter the file name of the board: ");
-                //input some other code here. klkl
-                
-                
-                
             }
             else if (loadBoard.equals("d")) {
                 System.out.println("L O A D I N G default board.");
@@ -38,5 +35,8 @@ public class newGame {
         
         input.close();
     }
+    
+ 
+
 }
 
