@@ -56,7 +56,7 @@ public class Players extends Tiles {
 	}
 
 	    
-	    
+	    //Due to time limitations computerTurn is functioned by an actual player.
 	    public void computerTurn() {
 	    	    // Display the player's tiles
 	    	    System.out.println(computerPlayer + "Your tiles: ");
@@ -97,6 +97,34 @@ public class Players extends Tiles {
 	    	        board.placeWord(word, row, col, false);
 	    	    } catch (NumberFormatException e) {
 	    	        e.printStackTrace();
+	    	       
 	    	    }
+	    	    
+	    	    /* Original plan of computerTurn() public boolean isValidWord() throws IOException {
+	    BufferedReader reader = new BufferedReader(new FileReader("/Users/chante/eclipse-workspace/Scrabble/DictionaryUK.txt"));
+	    Set<String> dictionary = new HashSet<String>();
+	    String line;
+	    while ((line = reader.readLine()) != null) {
+	        dictionary.add(line);
+	    }
+	    reader.close();
+	    return dictionary.contains(word);
+	}
+
+	public String computerTurn(ScrabbleBoard board, char[] computerTiles) {
+	    // Get all valid words from the computer's rack
+	    try {
+			boolean validWords = isValidWord();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    String word = toString();
+
+	    return word;
+	}
+}
+
+*/
 }
 }

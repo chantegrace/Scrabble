@@ -1,16 +1,22 @@
 package pij.main;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
    
-
     public static void main(String[] args) {
     	
+    	String filename = "DictionaryUK.txt";
+    	String directory = "Scrabble";
+    	String filepath = directory + File.separator + filename;
+    	File file = new File(filepath);
+
     	//Loads Board Screen
     	System.out.println("Welcome to Scrabble! My PiJ project.");
+    	
     	NewGame start = new NewGame();
     	start.startGame();
     	   	
@@ -77,6 +83,11 @@ public class Main {
         ScrabbleScoreManager score = new ScrabbleScoreManager();
         score.calculateScore(player1Tiles);
         score.calculateComputerScore(playerTiles);
+        
+        
+        ///outer while loop
+        
+        //Final winner
         score.getWinner();
         
         

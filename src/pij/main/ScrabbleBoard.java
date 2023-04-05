@@ -2,23 +2,45 @@ package pij.main;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-public class ScrabbleBoard {
-    private char[][] board;
+    public class ScrabbleBoard {
+        private char[][] board;
 
-    public ScrabbleBoard(int numRows, int numCols) {
-        board = new char[numRows][numCols];
-        for (int i = 0; i < numRows; i++) {
-            for (int j = 0; j < numCols; j++) {
-                board[i][j] = '-';
+        public ScrabbleBoard(int numRows, int numCols) {
+            board = new char[numRows][numCols];
+            for (int i = 0; i < numRows; i++) {
+                for (int j = 0; j < numCols; j++) {
+                    if (i == 0 && j == 0) {
+                        board[i][j] = '*'; // Starting point
+                    } else if ((i == 0 || i == numRows - 1) && (j == 3 || j == numCols - 4)) {
+                        board[i][j] = 't'; // Triple word score
+                    } else if ((i == 0 || i == numRows - 1) && (j == 0 || j == numCols - 1)) {
+                        board[i][j] = 'd'; // Double word score
+                    } else if ((i == 1 || i == numRows - 2) && (j == 2 || j == numCols - 3)) {
+                        board[i][j] = 'T'; // Triple letter score
+                    } else if ((i == 1 || i == numRows - 2) && (j == 1 || j == numCols - 2)) {
+                        board[i][j] = 'D'; // Double letter score
+                    } else {
+                        board[i][j] = '-'; // Blank tile
+                    }
+                }
             }
         }
-    }
+
+        public char[][] getBoard() {
+            return board;
+        }
+   
+    String filename = "scrabble_board.txt";
+	String directory = "Scrabble";
+	String filepath = directory + File.separator + filename;
+	File file = new File(filepath);
 
 public boolean isValidWord(String word) throws IOException {
     BufferedReader reader = new BufferedReader(new FileReader("/Users/chante/eclipse-workspace/Scrabble/DictionaryUK.txt"));

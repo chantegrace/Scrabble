@@ -15,7 +15,7 @@ public class ScrabbleManager {
 	public void placeWord(String word, int row, int col, char[] playerTiles) {
         // Check if the word can be placed on the board
         if (!canPlaceWord(word, row, col)) {
-            System.out.println("The word can't be placed there.");
+            System.out.println("This is not a valid move");
             return;
         }
 
